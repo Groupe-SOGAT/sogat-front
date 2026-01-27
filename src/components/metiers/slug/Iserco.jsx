@@ -81,14 +81,14 @@ function SectionTitle({ children, subtitle, className = "" }) {
   );
 }
 
-function PlaceholderImage({ src, alt, className = "", aspectRatio = "aspect-[4/3]" }) {
+function PlaceholderImage({ src, alt, className = "", aspectRatio = "aspect-[4/3]", contain = false }) {
   return (
     <div className={`relative ${aspectRatio} rounded-xl overflow-hidden bg-gray-100 ${className}`}>
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover"
+        className={contain ? "object-contain" : "object-cover"}
       />
     </div>
   );
@@ -113,7 +113,7 @@ function DetailSection({ title, imageSrc, imageAlt, children, bgColor = "bg-whit
           {title}
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <PlaceholderImage src={imageSrc} alt={imageAlt} aspectRatio="aspect-[4/3]" />
+          <PlaceholderImage src={imageSrc} alt={imageAlt} aspectRatio="aspect-[4/3]" contain />
           <div className="text-gray-700 leading-relaxed space-y-4">
             {children}
           </div>
@@ -547,7 +547,7 @@ export default function Iserco({ t, locale }) {
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-            <PlaceholderImage src={IMAGES.transfertVis} alt="Vis d'Archimède" aspectRatio="aspect-[4/3]" />
+            <PlaceholderImage src={IMAGES.transfertVis} alt="Vis d'Archimède" aspectRatio="aspect-[4/3]" contain />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <h3 className="text-xl font-bold text-iserco">Vis d&apos;Archimède</h3>
               <p>
@@ -558,7 +558,7 @@ export default function Iserco({ t, locale }) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <PlaceholderImage src={IMAGES.transfertPneumatique} alt="Transport pneumatique" aspectRatio="aspect-[4/3]" />
+            <PlaceholderImage src={IMAGES.transfertPneumatique} alt="Transport pneumatique" aspectRatio="aspect-[4/3]" contain />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <h3 className="text-xl font-bold text-iserco">Transport pneumatique</h3>
               <p>
@@ -579,7 +579,7 @@ export default function Iserco({ t, locale }) {
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-            <PlaceholderImage src={IMAGES.dosagePonderal} alt="Dosage pondéral" aspectRatio="aspect-[4/3]" />
+            <PlaceholderImage src={IMAGES.dosagePonderal} alt="Dosage pondéral" aspectRatio="aspect-[4/3]" contain />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <h3 className="text-xl font-bold text-iserco">Dosage pondéral</h3>
               <p>
@@ -589,7 +589,7 @@ export default function Iserco({ t, locale }) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <PlaceholderImage src={IMAGES.dosageVolumetrique} alt="Dosage volumétrique" aspectRatio="aspect-[4/3]" />
+            <PlaceholderImage src={IMAGES.dosageVolumetrique} alt="Dosage volumétrique" aspectRatio="aspect-[4/3]" contain />
             <div className="text-gray-700 leading-relaxed space-y-4">
               <h3 className="text-xl font-bold text-iserco">Dosage volumétrique</h3>
               <p>
