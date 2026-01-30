@@ -130,7 +130,6 @@ export default function Sermas({ t, locale }) {
               src={IMAGES.billettes.col1}
               alt="Solutions hautes-performances pour billettes"
               title="Solutions « hautes-performances »"
-              description="Pour tous formats de billettes"
             />
             <ImageCard
               src={IMAGES.billettes.col2}
@@ -154,19 +153,16 @@ export default function Sermas({ t, locale }) {
               src={IMAGES.equipment.col1}
               alt="Scies et ligne de sciage"
               title="SCIES & LIGNE DE SCIAGE"
-              description="Pour plaques coulées & Tés (T-bars) d'Aluminium"
             />
             <ImageCard
               src={IMAGES.equipment.col2}
               alt="Scies multi-fonctions"
               title="SCIES MULTI-FONCTIONS"
-              description="Pour le refendage, l'éboutage de plaques & Billettes d'Aluminium"
             />
             <ImageCard
               src={IMAGES.equipment.col3}
               alt="Scies de refendage"
               title="SCIES DE REFENDAGE"
-              description="La production de plaques fines (tôles) d'aluminium à partir de plaques coulées"
             />
           </div>
         </div>
@@ -180,13 +176,11 @@ export default function Sermas({ t, locale }) {
               src={IMAGES.twoCol.col1}
               alt="Installation de sciage pour plaques laminées"
               title="Installation de sciage pour plaques laminées"
-              description="Solution complètes « plates Saws »"
             />
             <ImageCard
               src={IMAGES.twoCol.col2}
               alt="Machines à surfacer"
               title="MACHINES A SURFACER"
-              description="Pour la production de plaques"
             />
           </div>
         </div>

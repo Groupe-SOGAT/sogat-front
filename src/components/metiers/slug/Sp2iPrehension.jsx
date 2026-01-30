@@ -121,13 +121,11 @@ export default function Sp2iPrehension({ t, locale }) {
               src={IMAGES.equipment.col1}
               alt="Pince spécifique pour outillage de presse"
               title="PINCE spécifique"
-              description="Pour outillage de presse"
             />
             <ImageCard
               src={IMAGES.equipment.col2}
               alt="Pince de préhension pour bobine horizontale"
               title="PINCE de préhension"
-              description="Pour bobine horizontale"
             />
             <ImageCard
               src={IMAGES.equipment.col3}
