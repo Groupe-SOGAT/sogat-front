@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 // =============================================================================
 // IMAGE CONFIGURATION - Easy to update all images from here
@@ -79,8 +82,13 @@ function SectionTitle({ children, subtitle, className = "" }) {
 }
 
 function ImageCard({ src, alt, title, description, aspectRatio = "aspect-[4/3]" }) {
+  const [showDescription, setShowDescription] = useState(false);
+
   return (
-    <div className="group">
+    <div
+      className="group cursor-pointer"
+      onClick={() => description && setShowDescription(!showDescription)}
+    >
       <div className={`relative ${aspectRatio} rounded-xl overflow-hidden mb-4 bg-gray-100`}>
         <Image
           src={src}
@@ -92,8 +100,10 @@ function ImageCard({ src, alt, title, description, aspectRatio = "aspect-[4/3]" 
       {title && (
         <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
       )}
-      {description && (
-        <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+      {description && showDescription && (
+        <p className="text-gray-600 text-sm leading-relaxed animate-in fade-in duration-300">
+          {description}
+        </p>
       )}
     </div>
   );
@@ -130,6 +140,7 @@ export default function Sermas({ t, locale }) {
               src={IMAGES.billettes.col1}
               alt="Solutions hautes-performances pour billettes"
               title="Solutions « hautes-performances »"
+              description="Pour tous formats de billettes"
             />
             <ImageCard
               src={IMAGES.billettes.col2}
@@ -153,16 +164,19 @@ export default function Sermas({ t, locale }) {
               src={IMAGES.equipment.col1}
               alt="Scies et ligne de sciage"
               title="SCIES & LIGNE DE SCIAGE"
+              description="Pour plaques coulées & Tés (T-bars) d'Aluminium"
             />
             <ImageCard
               src={IMAGES.equipment.col2}
               alt="Scies multi-fonctions"
               title="SCIES MULTI-FONCTIONS"
+              description="Pour le refendage, l'éboutage de plaques & Billettes d'Aluminium"
             />
             <ImageCard
               src={IMAGES.equipment.col3}
               alt="Scies de refendage"
               title="SCIES DE REFENDAGE"
+              description="La production de plaques fines (tôles) d'aluminium à partir de plaques coulées"
             />
           </div>
         </div>
@@ -176,11 +190,13 @@ export default function Sermas({ t, locale }) {
               src={IMAGES.twoCol.col1}
               alt="Installation de sciage pour plaques laminées"
               title="Installation de sciage pour plaques laminées"
+              description="Solution complètes « plates Saws »"
             />
             <ImageCard
               src={IMAGES.twoCol.col2}
               alt="Machines à surfacer"
               title="MACHINES A SURFACER"
+              description="Pour la production de plaques"
             />
           </div>
         </div>
